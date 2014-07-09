@@ -25,4 +25,13 @@ $(document).ready(function ($) {
       }
     });
   });
+
+  //on selecting different report, hide the current one
+  $('.cd-timeline-icon').click(function () {
+    $('.cd-timeline-block.selected').removeClass('selected');
+    $('.cd-timeline-content').addClass('is-hidden').removeClass('bounce-in');
+    var $block = $(this).parent();
+    $block.addClass('selected');
+    $block.find('.cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+  });
 });
