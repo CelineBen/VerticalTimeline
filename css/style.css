@@ -53,6 +53,13 @@ Modules - reusable parts of our design
   display: table;
   clear: both;
 }
+.vertical {
+  transform: rotate(270deg);
+  transform-origin: left top 0;
+}
+.blue {
+  background: #00AEEF;
+}
 
 /* -------------------------------- 
 
@@ -140,7 +147,7 @@ header h1 {
 }
 @media only screen and (min-width: 1170px) {
   .cd-timeline-block {
-    margin: 4em 0;
+    margin: 8em 0;
   }
   .cd-timeline-block:first-child {
     margin-top: 0;
@@ -199,11 +206,7 @@ header h1 {
   box-shadow: 0 0 0 2px #00AEEF, inset 0 1px 0 rgba(0, 0, 0, 0.08), 0 3px 0 1px rgba(0, 0, 0, 0.05);
 }
 
-.cd-timeline-main-icon.first .cd-timeline-month{
-  background: #00AEEF;  
-}
-
-.cd-timeline-block.selected .cd-timeline-icon{
+.cd-timeline-main-icon.first .cd-timeline-month, .cd-timeline-block.selected .cd-timeline-icon{
   background: #00AEEF;  
 }
 
@@ -286,11 +289,10 @@ header h1 {
   }
 }
 .cd-timeline-content {
-  position: relative;
+  position:absolute;
   margin-left: 60px;
   background: white;
   border-radius: 0.25em;
-  padding: 1em;
   box-shadow: 0 3px 0 #d7e4ed;
 }
 .cd-timeline-content:after {
@@ -298,29 +300,26 @@ header h1 {
   display: table;
   clear: both;
 }
-.cd-timeline-content h2 {
-  color: #303e49;  
-}
 .cd-timeline-content .cd-timeline-content-header {
+  /*float: left;*/
+  width: 40px;
   position: absolute;
-  background: #00AEEF;
   top: 0;
-  left:0;
-  width: 10%;
+  left: 0; 
   height: 100%;
 }
+
 .cd-timeline-content .cd-timeline-content-header h2{
   color: white;
   position: absolute;
   width: 400px;
   top: 380px;
   padding-top: 10px;
-  transform: rotate(270deg);
-  transform-origin: left top 0;
 }
 .cd-timeline-content .cd-timeline-content-info {
-  float: right;
-  width: 90%;
+  position: relative;
+  left: 40px;
+  width: 960px;
 }
 
 .cd-timeline-content .cd-timeline-content-info .listing {
@@ -328,12 +327,48 @@ header h1 {
   font-size: 13px;
   font-size: 1rem;
   box-shadow: 0 10px 10px 0 #AAAAAA;
-  margin: 30px 0;
+  margin-top: 30px;
+  padding-left: 10px;
+  min-height: 200px;
 }
 
-.no-touch .cd-timeline-content .cd-read-more:hover {
-  background-color: #bac4cb;
+/* -------------------------------- 
+  Listing content
+-------------------------------- */
+
+.listing .listing-content{
+  float:left;
+  width:30%;
 }
+
+/* -------------------------------- 
+  Listings and Citations & Channel Rankings
+-------------------------------- */
+
+.listing .channel-rankings{
+  float:right;
+  width:30%;
+}
+
+.listing .listings-citations{
+  width:30%;
+  margin: 0 auto;
+}
+
+/*.listing .listings-citations .listings-citations-header, 
+.listing .channel-rankings .channel-rankings-header {
+  position: absolute;
+  top: 0px;
+  width: 20px;
+  height: 100%;
+}
+
+.listing .listings-citations .listings-citations-content, 
+.listing .channel-rankings .channel-rankings-content {
+  position: absolute;
+  left: 25px;
+  height: 100%;
+}*/
 
 .cd-timeline-content::before {
   content: '';
@@ -362,9 +397,8 @@ header h1 {
 @media only screen and (min-width: 1170px) {
   .cd-timeline-content {
     margin-left: 0;
-    padding: 1.6em;
-    width: 45%;
-    left: 15%;
+    width: 1000px;
+    left: 17%;
     top: -25px;
     min-height: 400px;
   }
@@ -374,9 +408,6 @@ header h1 {
     right: 100%;
     border-color: transparent;
     border-right-color: #00AEEF;
-  }
-  .cd-timeline-content .cd-read-more {
-    float: right;
   }
   .cssanimations .cd-timeline-content.is-hidden {
     visibility: hidden;

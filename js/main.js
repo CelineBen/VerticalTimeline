@@ -4,12 +4,15 @@
 $(document).ready(function ($) {
   var $timeline_block = $('.cd-timeline-block');
 
-  //hide timeline blocks which are outside the viewport
+  //hide all timeline blocks 
   $timeline_block.each(function () {
+    $(this).find('.cd-timeline-content').addClass('is-hidden');
     if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
-      $(this).find('.cd-timeline-icon, .cd-timeline-content').addClass('is-hidden');
+      $(this).find('.cd-timeline-icon').addClass('is-hidden');
     }
   });
+  //show only the first one
+  //$('.cd-timeline-block.selected').find('.cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
 
   //on scolling, show/animate timeline blocks when enter the viewport 
   //Change: On scrolling, only show the details for the last date
