@@ -295,7 +295,7 @@ header h1 {
 .cd-timeline-content {
   position:absolute;
   margin-left: 60px;
-  background: white;
+  /*background: white;*/
   border-radius: 0.25em;
   box-shadow: 0 3px 0 #d7e4ed;
 }
@@ -305,8 +305,9 @@ header h1 {
   clear: both;
 }
 .cd-timeline-content .cd-timeline-content-header {
-  /*float: left;*/
-  width: 40px;
+  z-index: 1;
+  /*width: 40px;*/
+  width: 6.25%;
   position: absolute;
   top: 0;
   left: 0; 
@@ -318,46 +319,50 @@ header h1 {
   position: absolute;
   width: 400px;
   top: 380px;
-  padding-top: 10px;
+  padding-top: 15px;
 }
+
+.ui.grid.cd-timeline-content > .column,  .ui.grid.listing > .column{
+  margin: 0px;
+}
+
+.cd-timeline-content .row.listing{
+  box-shadow: 0 10px 10px 0 #AAAAAA;
+  margin-top: 80px;
+  background: white;
+  min-height: 200px;
+  padding: 0;
+}
+
+.cd-timeline-content .row.listing:first-child{
+  margin-top: 0;
+}
+
 .cd-timeline-content .cd-timeline-content-info {
-  position: relative;
+  /*position: relative;
   left: 40px;
-  width: 960px;
+  width: 960px;*/
 }
 
 .cd-timeline-content .cd-timeline-content-info .listing {
-  display: block;
+  /*display: block;
   font-size: 13px;
   font-size: 1rem;
   box-shadow: 0 10px 10px 0 #AAAAAA;
   margin-top: 30px;
   padding-left: 10px;
-  min-height: 200px;
+  min-height: 200px;*/
 }
 
 /* -------------------------------- 
   Listing content
 -------------------------------- */
 
-.listing .listing-content{
-  float:left;
-  width:30%;
-}
 
 /* -------------------------------- 
   Listings and Citations & Channel Rankings
 -------------------------------- */
 
-.listing .channel-rankings{
-  float:right;
-  width:30%;
-}
-
-.listing .listings-citations{
-  width:30%;
-  margin: 0 auto;
-}
 
 /*.listing .listings-citations .listings-citations-header, 
 .listing .channel-rankings .channel-rankings-header {
