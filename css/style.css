@@ -53,7 +53,7 @@ Modules - reusable parts of our design
   display: table;
   clear: both;
 }
-.vertical {
+.vertical.text {
   transform: rotate(270deg);
   -moz-transform: rotate(270deg);
   -webkit-transform: rotate(270deg);
@@ -61,9 +61,44 @@ Modules - reusable parts of our design
   -moz-transform-origin: left top 0;
   -webkit-transform-origin: left top 0;
 }
-.blue {
+.blue.background {
   background: #00AEEF;
 }
+
+.blue.text {
+  color: #00AEEF;
+}
+
+.grey.background {
+  background: #E0E0E0;
+}
+
+/* -------------------------------- 
+
+Semantic overwrite
+-------------------------------- */
+
+.ui.grid > .column{
+  margin: 0px;
+}
+
+.ui.small.vertical.menu {
+  width: 7rem;
+}
+
+.ui.menu .header.item, .ui.table tr td.active {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ui.menu .header.item {
+   padding: 5px 0 5px 10px;
+}
+
+.ui.popup, 
+.ui.popup:before {
+  background-color: #CCCCCC;
+}
+
 
 /* -------------------------------- 
 
@@ -306,8 +341,7 @@ header h1 {
 }
 .cd-timeline-content .cd-timeline-content-header {
   z-index: 1;
-  /*width: 40px;*/
-  width: 6.25%;
+  width: 35px;
   position: absolute;
   top: 0;
   left: 0; 
@@ -319,65 +353,76 @@ header h1 {
   position: absolute;
   width: 400px;
   top: 380px;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
-.ui.grid.cd-timeline-content > .column,  .ui.grid.listing > .column{
+.ui.grid > .column{
   margin: 0px;
 }
+
+/*** LISTING ***/
 
 .cd-timeline-content .row.listing{
   box-shadow: 0 10px 10px 0 #AAAAAA;
   margin-top: 80px;
   background: white;
-  min-height: 200px;
+  min-height: 300px;
   padding: 0;
+  overflow: hidden;
+  position: relative;
+  left: -60px;
+  width: 100%;
 }
 
 .cd-timeline-content .row.listing:first-child{
   margin-top: 0;
 }
 
-.cd-timeline-content .cd-timeline-content-info {
-  /*position: relative;
-  left: 40px;
-  width: 960px;*/
-}
-
-.cd-timeline-content .cd-timeline-content-info .listing {
-  /*display: block;
-  font-size: 13px;
-  font-size: 1rem;
-  box-shadow: 0 10px 10px 0 #AAAAAA;
-  margin-top: 30px;
-  padding-left: 10px;
-  min-height: 200px;*/
-}
-
-/* -------------------------------- 
-  Listing content
--------------------------------- */
-
-
-/* -------------------------------- 
-  Listings and Citations & Channel Rankings
--------------------------------- */
-
-
-/*.listing .listings-citations .listings-citations-header, 
-.listing .channel-rankings .channel-rankings-header {
+.listing-content,
+.listings-citations,
+.channel-rankings {
   position: absolute;
-  top: 0px;
-  width: 20px;
+  width: 400px;
   height: 100%;
 }
 
-.listing .listings-citations .listings-citations-content, 
-.listing .channel-rankings .channel-rankings-content {
+.listings-citations{
+  left: 400px;
+}
+.channel-rankings{
+  left: 800px;
+}
+
+.listings-citations-content,
+.channel-rankings-content{
+  position: relative;
+  left: 30px;
+  font-height: 0.5 em;
+}
+
+.vertical.bar {
+  width: 30px;
   position: absolute;
-  left: 25px;
+  top: 0;
+  left: 0; 
   height: 100%;
-}*/
+}
+
+.listings-citations h2.vertical.text,
+.channel-rankings h2.vertical.text {
+  position: absolute;
+  width: 400px;
+  top: 250px;
+  padding-top: 5px;
+}
+
+.vertical.white.text {
+  color: white;
+}
+
+.listings-citations-content .i.icon {
+  float: right;
+}
 
 .cd-timeline-content::before {
   content: '';
@@ -406,7 +451,7 @@ header h1 {
 @media only screen and (min-width: 1170px) {
   .cd-timeline-content {
     margin-left: 0;
-    width: 1000px;
+    width: 1200px;
     left: 17%;
     top: -25px;
     min-height: 400px;

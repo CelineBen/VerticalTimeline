@@ -3,7 +3,6 @@
 
 $(document).ready(function ($) {
 
-  $('.ui.dropdown').dropdown();
   var $timeline_block = $('.cd-timeline-block');
 
   //hide all timeline blocks 
@@ -39,4 +38,13 @@ $(document).ready(function ($) {
     $block.addClass('selected');
     $block.find('.cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
   });
+
+
+  //SEMANTIC
+  $('.ui.dropdown').dropdown();
+  $('.function')
+    .popup({
+      on: 'click',
+      position: 'left center'
+    });
 });
