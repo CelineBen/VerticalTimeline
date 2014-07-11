@@ -12,7 +12,7 @@ $(document).ready(function ($) {
     }
   });
   //show only the first one
-  //$('.cd-timeline-block.selected').find('.cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+  $('.cd-timeline-block.selected').find('.cd-timeline-icon, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
 
   //on scolling, show/animate timeline blocks when enter the viewport 
   //Change: On scrolling, only show the details for the last date
