@@ -2,6 +2,8 @@
 /*global $, track, console, define*/
 
 $(document).ready(function ($) {
+
+  $('.ui.dropdown').dropdown();
   var $timeline_block = $('.cd-timeline-block');
 
   //hide all timeline blocks 
